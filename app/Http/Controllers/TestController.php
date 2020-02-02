@@ -46,9 +46,12 @@ class TestController extends Controller
      * @param  \App\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function show(test $test)
+    public function show(Request $request, $id, test $test)
     {
-        //
+        $message = 'ID:'. $id;
+        $test = Test::find($id);
+        return view('show', ['message' => $message, 'test' => $test]);
+
     }
 
     /**
