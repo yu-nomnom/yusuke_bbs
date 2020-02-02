@@ -8,5 +8,8 @@
     <body>
         <h1>yusuke bbs</h1>
         <p>{{ $message }}</p>
+        @foreach ($tests as $test)
+            <p>{{ $test->content }}</p>
+        @endforeach
     </body>
 </html>

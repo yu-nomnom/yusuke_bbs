@@ -15,7 +15,8 @@ class TestController extends Controller
     public function index()
     {
         $message = 'welcome to my bbs';
-        return view('index', ['message' => $message]);
+        $tests = Test::all();
+        return view('index', ['message' => $message, 'tests' => $tests]);
     }
 
     /**
