@@ -9,7 +9,11 @@
         <h1>yusuke bbs</h1>
         <p>{{ $message }}</p>
         @foreach ($tests as $test)
-            <p>{{ $test->content }}</p>
+            <p>
+                <a href='{{ route("test.show", ["id" =>  $test->id]) }}'>
+                    {{ $test->content }}
+                </a>
+            </p>
         @endforeach
     </body>
 </html>

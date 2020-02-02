@@ -15,7 +15,7 @@ class TestController extends Controller
     public function index()
     {
         $message = 'welcome to my bbs';
-        $tests = Test::all();
+        $tests = test::all();
         return view('index', ['message' => $message, 'tests' => $tests]);
     }
 
@@ -49,7 +49,7 @@ class TestController extends Controller
     public function show(Request $request, $id, test $test)
     {
         $message = 'ID:'. $id;
-        $test = Test::find($id);
+        $test = test::find($id);
         return view('show', ['message' => $message, 'test' => $test]);
 
     }
