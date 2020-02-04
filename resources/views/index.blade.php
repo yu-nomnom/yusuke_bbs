@@ -10,7 +10,7 @@
         <p>{{ $message }}</p>
         @foreach ($tests as $test)
             <p>
-                <a href='{{ route("test.show", ["id" =>  $test->id]) }}'>
+                <a href="{{ action('TestController@show', $test->id, $test) }}">
                     {{ $test->content }}
                 </a>
             </p>

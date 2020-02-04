@@ -14,7 +14,7 @@ class AddColumnName extends Migration
     public function up()
     {
         Schema::table('tests', function (Blueprint $table) {
-            $table->string('name')->nullable();
+            $table->string('name')->nullable()->change();
         });
     }
 
