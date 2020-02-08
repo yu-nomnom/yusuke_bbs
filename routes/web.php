@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TestController@index');
 
 Route::get('/tests', 'TestController@index')->name('test.list');
 Route::get('/test/{id}', 'TestController@show')->name('test.show');
