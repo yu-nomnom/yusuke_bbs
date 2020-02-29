@@ -14,4 +14,5 @@
 Route::get('/', 'TestController@index');
 
 Route::get('/tests', 'TestController@index')->name('test.list');
+Route::get('/test/new', 'TestController@create')->name('test.new');
 Route::get('/test/{id}', 'TestController@show')->name('test.show');

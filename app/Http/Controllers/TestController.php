@@ -24,9 +24,15 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $test = new test();
+        $test->name = 'laravel_man';
+        $test->title = 'laravel is difficult';
+        $test->content = 'laravel ha muzukasizo!';
+        $test->save();
+
+        return redirect('/tests');
     }
 
     /**

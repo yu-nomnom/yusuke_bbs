@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <title>yusuke bbs</title>
-        <style>body {padding: 10px;}</style>
-    </head>
+@extends('layout')
+
+@section('content') 
     <body>
         <h1>yusuke bbs</h1>
         <p>{{ $message }}</p>
@@ -12,8 +8,11 @@
             <p>
                 <a href="/test/{{$test->id}}">
                     {{ $test->title }}
-                </a>
+                </a> 
             </p>
         @endforeach
+        <div>
+            <a href="/test/new">新規投稿</a>
+        </div>
     </body>
-</html>
+@endsection
