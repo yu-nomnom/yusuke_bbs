@@ -26,13 +26,9 @@ class TestController extends Controller
      */
     public function create(Request $request)
     {
-        $test = new test();
-        $test->name = 'laravel_man';
-        $test->title = 'laravel is difficult';
-        $test->content = 'laravel ha muzukasizo!';
-        $test->save();
+        $message = '新規投稿';
 
-        return redirect('/tests');
+        return View('new',['message' => $message]);
     }
 
     /**
@@ -43,7 +39,12 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $test = new test();
+        $test->title = $request->title;
+        $test->content = $request->content;
+        $test->name = $request->name;
+        $test->save();
+        return redirect('/tests');
     }
 
     /**
@@ -57,7 +58,6 @@ class TestController extends Controller
         $message = 'ID:'. $id;
         $test = test::find($id);
         return view('show', ['message' => $message, 'test' => $test]);
-
     }
 
     /**
