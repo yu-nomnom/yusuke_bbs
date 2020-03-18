@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\test;
 use Illuminate\Http\Request;
 
+
 class TestController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +18,9 @@ class TestController extends Controller
     {
         $message = 'welcome to my bbs';
         $tests = test::all();
+        // dd('aaaa');
         return view('index', ['message' => $message, 'tests' => $tests]);
+        
     }
 
     /**

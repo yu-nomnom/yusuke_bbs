@@ -8,7 +8,7 @@
         <p>{{ $test->content }}</p>
         <!-- <p>{{ $test->name}}</p> -->
         <p>
-            <a href="/tests"　class='btn btn-outline-primary'>一覧に戻る</a> 
+            <a href='{{route("test.list")}}'　class='btn btn-outline-primary'>一覧に戻る</a> 
         </p>
         <div>
             {{ Form::open(['method' => 'delete', 'route' => ['test.delete', $test->id]]) }}
