@@ -93,11 +93,11 @@ class TestController extends Controller
      * @param  \App\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function delete(test $test)
+    public function delete(Request $request, $id, test $test)
     {
         //削除機能
-        Test::find($test->id)->delete();
-        return view('test.list');
-        
+        $test = $test::find($id);
+        $test->delete();
+        return redirect('/tests'); 
     }
 }

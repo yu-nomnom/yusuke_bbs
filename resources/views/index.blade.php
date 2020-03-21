@@ -8,7 +8,7 @@
             @foreach ($tests as $test)
                 <tr>
                     <td>
-                        <a href='{{ route("test.show", ["id" =>  $test->id]) }}'>
+                        <a href='{{ route("test.show", ["id" => $test->id]) }}'>
                             {{ $test->title }}
                         </a>
                     </td>
